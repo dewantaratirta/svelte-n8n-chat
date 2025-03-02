@@ -1,0 +1,53 @@
+/* Base KaTeX styling */
+@import 'katex/dist/katex.min.css';
+
+/* Enhanced KaTeX styling for shadcn themes */
+.math-display,
+.katex-display {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  background-color: hsl(var(--muted));
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+/* Math inline formulas */
+.math-inline,
+.katex {
+  font-size: 1.05em;
+}
+
+/* Math block formulas */
+.katex-display > .katex {
+  font-size: 1.15em;
+}
+
+/* Formula color adaptations for light/dark mode */
+:root {
+  --katex-font-color: hsl(var(--foreground));
+  --katex-bg-color: hsl(var(--muted));
+}
+
+.katex {
+  color: var(--katex-font-color);
+}
+
+/* Make fraction lines and other symbols respect theme */
+.katex .frac-line,
+.katex .mfrac .frac-line, 
+.katex .overline .overline-line,
+.katex .underline .underline-line,
+.katex .hline,
+.katex .hdashline,
+.katex .sqrt .sqrt-line {
+  border-color: currentColor;
+}
+
+/* Enhance contrast for math environments */
+.dark .math-display,
+.dark .katex-display {
+  background-color: hsl(var(--muted) / 0.7);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3);
+}

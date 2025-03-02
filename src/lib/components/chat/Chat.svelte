@@ -15,6 +15,8 @@
 	export let loadingChat = true;
 	export let componentLoading = true;
 	export let loading = false;
+	export let greeting = 'Hello! How can I help you today?';
+	
 	export let options = {
 		WEBHOOK_URL: 'https://cobacoba.tech/webhook/61719009-d0a2-4713-b34c-7b9a9f286a30/chat',
 		SESSION_ID: ''
@@ -26,7 +28,7 @@
 		{
 			id: 1,
 			role: 'assistant',
-			content: 'Hello! How can I help you today?',
+			content: greeting,
 			timestamp: new Date()
 		}
 	];

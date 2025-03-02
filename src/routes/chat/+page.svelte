@@ -6,7 +6,8 @@
 
 	let opts = null;
 	let chatLoading = true;
-    let assistantName = 'GendhelAi';
+    let assistantName = 'TokenomicsAI';
+    const greeting = `Greetings! I am here to assist you with all aspects of tokenomics. From analyzing token distribution to optimizing market strategies, I’m ready to help you achieve your crypto project’s goals.<br/>How can I assist you today?`;
 
 	onMount(async () => {
 		let sess = (await loadPreviousSession()) || (await startNewSession());
@@ -19,4 +20,4 @@
 	});
 </script>
 
-<Chat options={opts} loadingChat={chatLoading} {assistantName} />
+<Chat options={opts} loadingChat={chatLoading} {assistantName} {greeting}/>

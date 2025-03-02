@@ -1,3 +1,6 @@
+/* Import our custom KaTeX styling */
+@import './lib/styles/katex-theme.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
