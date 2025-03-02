@@ -4,6 +4,7 @@ node_modules
 .output
 .vercel
 .netlify
+.github
 .wrangler
 /.svelte-kit
 /build
