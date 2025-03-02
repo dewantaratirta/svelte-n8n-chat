@@ -1,6 +1,8 @@
 <script>
   import { Avatar } from "$lib/components/ui/avatar";
   import { cn } from "$lib/utils";
+  import {parseMarkdown} from "$lib/utils/markdown";
+
   export let assistantName = "Assistant";
   export let message;
   
@@ -11,6 +13,7 @@
       minute: '2-digit'
     }).format(date);
   }
+
 </script>
 
 <div class={cn(
@@ -34,6 +37,8 @@
         {formatTime(message.timestamp)}
       </span>
     </div>
-    <p class="prose prose-sm break-words">{message.content}</p>
+    <div class="prose dark:prose-invert !max-w-[100vw]">
+      {@html parseMarkdown(message.content)}
+    </div>
   </div>
 </div>

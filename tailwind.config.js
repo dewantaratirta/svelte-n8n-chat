@@ -3,7 +3,12 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 /** @type {import('tailwindcss').Config} */
 const config = {
 	darkMode: ["class"],
-	content: ["./src/**/*.{html,js,svelte,ts}"],
+	content: [
+		'./pages/**/*.{js,ts,jsx,tsx,mdx}',
+		'./components/**/*.{js,ts,jsx,tsx,mdx}',
+		'./app/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/**/*.{html,js,svelte,ts,mdx}',
+	],
 	safelist: ["dark"],
 	theme: {
 		container: {
@@ -56,9 +61,37 @@ const config = {
 			},
 			fontFamily: {
 				sans: [...fontFamily.sans]
-			}
+			},
+			typography: {
+				DEFAULT: {
+					css: {
+						p: {
+							marginTop: "0",
+							marginBottom: "0"
+						},
+						ul: {
+							marginTop: "0",
+							marginBottom: "0"
+						},
+						li: {
+							marginTop: "0",
+							marginBottom: "0"
+						},
+						// color: 'hsl(var(--foreground))',
+						// a: {
+						// 	color: 'hsl(var(--primary))',
+						// 	'&:hover': {
+						// 		color: 'hsl(var(--primary) / 0.8)',
+						// 	},
+						// },
+					},
+				},
+			},
 		}
 	},
+	plugins: [
+		require('@tailwindcss/typography'),
+	],
 };
 
 export default config;

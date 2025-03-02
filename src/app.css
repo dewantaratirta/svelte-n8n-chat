@@ -1,10 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 240 100% 100%;
     --foreground: 222.2 84% 4.9%;
  
     --muted: 210 40% 96.1%;
@@ -75,4 +75,11 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.prose :where(ul ul, ul ol, ol ul, ol ol):not(:where([class~="not-prose"],[class~="not-prose"] *)),
+.prose :where(.prose > ol > li > p:first-child):not(:where([class~="not-prose"],[class~="not-prose"] *)),
+.prose :where(.prose > ul > li > p:last-child):not(:where([class~="not-prose"],[class~="not-prose"] *)){
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
 }
